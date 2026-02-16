@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Media extends Model
 {
     use HasFactory;
-
     protected $table = 'media'; //Tabla 'media'
-
     protected $fillable = [ //Campos que se llenaran masivamente
         'name',
         'type',
@@ -25,8 +23,8 @@ class Media extends Model
         'status' => 'boolean',
     ];
     //Relaciones con otras entidades: un medio publicitario tendra muchas RESERVAS (Bookings)
-    public function Bookings()
+    public function bookings()
     {
-        return $this->hasMany(Booking::class);
+        return $this->hasMany(Bookings::class);
     }
 }
