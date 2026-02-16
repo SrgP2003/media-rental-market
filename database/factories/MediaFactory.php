@@ -17,7 +17,22 @@ class MediaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->company(),
+            'type' => fake()->randomElement([
+                'billboard',
+                'screen',
+                'mupi',
+                'wall'
+            ]),
+            'location' => fake()->city(),
+            'dimensions' => fake()->randomElement([
+                '5x3',
+                '4x2',
+                '6x3',
+                '3x2'
+            ]),
+            'price_per_day' => fake()->randomFloat(2, 50, 500),
+            'status' => fake()->boolean(90),
         ];
     }
 }
